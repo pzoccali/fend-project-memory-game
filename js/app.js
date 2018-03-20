@@ -3,7 +3,7 @@
  */
  const cardList = [
    "diamond",
-   "paper-plane"
+   "paper-plane",
    "cube",
    "anchor",
    "bolt",
@@ -11,7 +11,7 @@
    "bicycle",
    "bomb",
    "diamond",
-   "paper-plane"
+   "paper-plane",
    "cube",
    "anchor",
    "bolt",
@@ -19,17 +19,9 @@
    "bicycle",
    "bomb",
  ]
-//let cardList = [];
-// function makeGrid() {
-//   const deck = document.createElement('UL');
-//   const newCard = document.createElement('LI');
-//   for (let i = 0; i < 16; i++) {
-//     deck.new
-//     //let innerText = deck.card.innerText("card" +  i);
-//     //console.log(innerText);
-//   }
-// }
-// makeGrid();
+
+ let flippedCards = 0;
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -52,6 +44,29 @@ function shuffle(array) {
     return array;
 }
 
+
+function makeBoard() {
+  flippedCards = 0;
+  //Selects the element that holds all the cards
+  let deck = document.getElementsByClassName('deck');
+  //let newCard = document.createElement("LI");
+  let output = "";
+  //const deck = document.createElement('UL');
+  //shuffle(cardList);
+
+  //Loops thourugh the length of the card list and creates 
+  //the li HTML for each card
+  for (let i = 0; i < cardList.length; i++) {
+    //deck.appendChild(newCard);
+
+    output +=
+      '<li class= "card">\
+        <i class = "fa"></i>\
+      </li>';
+  }
+  //Adds the HTML to the selected element
+  deck.innerHTML = output;
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
